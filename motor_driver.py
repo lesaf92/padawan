@@ -5,6 +5,7 @@ from geometry_msgs.msg import Twist
 import RPi.GPIO as GPIO
 from time import sleep
 
+GPIO.cleanup()
 # Left wheel
 in1 = 17
 in2 = 27
