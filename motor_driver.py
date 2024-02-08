@@ -14,7 +14,7 @@ in4 = 24
 
 def config():
     # Config
-	GPIO.cleanup()
+    GPIO.cleanup()
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(in1, GPIO.OUT)
     GPIO.setup(in2, GPIO.OUT)
@@ -60,7 +60,7 @@ def cmd_vel_cb(msg):
 ############################# Main starts here ################################
 ###############################################################################
 def main():
-	config()
+    config()
     rospy.init_node('motor_driver', anonymous=False)
     rate = rospy.Rate(10)
     rospy.Subscriber('/cmd_vel', Twist, cmd_vel_cb)
