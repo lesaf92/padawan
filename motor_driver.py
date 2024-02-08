@@ -60,10 +60,9 @@ def cmd_vel_cb(msg):
 ############################# Main starts here ################################
 ###############################################################################
 def main():
-    rospy.init_node('motor_driver', anonymous=False)
+    config()
+	rospy.init_node('motor_driver', anonymous=False)
     rate = rospy.Rate(10)
-	config()
-
     rospy.Subscriber('/cmd_vel', Twist, cmd_vel_cb)
     rospy.spin()
     GPIO.cleanup()
