@@ -89,8 +89,8 @@ def vel_right_wheel(vel, weak):
         right_stop()
 # Default values for padawan geometry
 def inverse_kinematics_diff_drive(vx, wz, L=0.26, r=0.047):
-    v_left = (v_x - (L/2)*omega)/r
-    v_right = (v_x + (L/2)*omega)/r
+    v_left = (vx - (L/2)*wz)/r
+    v_right = (vx + (L/2)*wz)/r
     return v_left, v_right
 
 def cmd_vel_cb(msg):
