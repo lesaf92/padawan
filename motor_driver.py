@@ -65,18 +65,41 @@ def right_stop():
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.LOW)
     pwm2.stop()
+def vel_left_wheel(vel, weak):
+    global dc_global
+    dc = dc_global
+    if weak:
+        dc = dc - 10
+    if vel > 0:
+        left_forward(dc)
+    elif vel < 0:
+        left_backward(dc)
+    else:
+        left_stop()
+def vel_right_wheel(vel, weak):
+    global dc_global
+    dc = dc_global
+    if weak:
+        dc = dc - 10
+    if vel > 0:
+        right_forward(dc)
+    elif vel < 0:
+        right_backward(dc)
+    else:
+        right_stop()
+# Default values for padawan geometry
+def inverse_kinematics_diff_drive(vx, wz, L=0.26, r=0.047):
+    v_left = (v_x - (L/2)*omega)/r
+    v_right = (v_x + (L/2)*omega)/r
+    return v_left, v_right
 
 def cmd_vel_cb(msg):
     global dc_global
-    if msg.linear.x > 0:
-        left_forward(dc_global)
-        right_forward(dc_global)
-    elif msg.linear.x < 0:
-        left_backward(dc_global)
-        right_backward(dc_global)
-    else:
-        left_stop()
-        right_stop()
+    vx = msg.linear.x
+    wz = msg.linear.z
+    v_left, v_right = inverse_kinematics_diff_drive(vx, wz)
+    vel_left_wheel(v_left, False)
+    vel_right_wheel(v_right, False)
 ###############################################################################
 ############################# Main starts here ################################
 ###############################################################################
