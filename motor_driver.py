@@ -93,12 +93,22 @@ def inverse_kinematics_diff_drive(vx, wz, L=0.26, r=0.047):
     v_right = (vx + (L/2)*wz)/r
     return v_left, v_right
 
+def motion_fixed_pwm(v_left, v_right):
+    if (v_left > v_right) and (v_left*v_right > 0):
+        vel_left_wheel(v_left, False)
+        vel_right_wheel(v_right, True)
+    elif (v_left < v_right) and (v_left*v_right > 0):
+        vel_left_wheel(v_left, True)
+        vel_right_wheel(v_right, False)
+    else:
+        vel_left_wheel(v_left, False)
+        vel_right_wheel(v_right, False)
+
 def cmd_vel_cb(msg):
     vx = msg.linear.x
     wz = msg.angular.z
     v_left, v_right = inverse_kinematics_diff_drive(vx, wz)
-    vel_left_wheel(v_left, False)
-    vel_right_wheel(v_right, False)
+    motion_fixed_pwm(v_left, v_right)
 ###############################################################################
 ############################# Main starts here ################################
 ###############################################################################
