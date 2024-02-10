@@ -94,9 +94,8 @@ def inverse_kinematics_diff_drive(vx, wz, L=0.26, r=0.047):
     return v_left, v_right
 
 def cmd_vel_cb(msg):
-    global dc_global
     vx = msg.linear.x
-    wz = msg.linear.z
+    wz = msg.angular.z
     v_left, v_right = inverse_kinematics_diff_drive(vx, wz)
     vel_left_wheel(v_left, False)
     vel_right_wheel(v_right, False)
