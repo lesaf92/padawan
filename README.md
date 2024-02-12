@@ -15,4 +15,15 @@ The robot structure aims to be simple as possible. The objective is to collect d
  - Python
  - C++
 
-Work in progress
+TODO list
+- [X] drive motors
+- [X] read camera in decent fps
+- [ ] read IMU in decent Hz
+- [X] create a node for the motors
+- [X] create a node for the camera
+- [ ] create a node for the IMU
+- [ ] bringup at boot
+- [ ] process camera image and republish
+- [ ] navigate based on the image processed
+- [ ] estimate using IMU only
+- [ ] navigate based on IMU estimation and processed image
