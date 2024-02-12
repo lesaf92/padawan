@@ -3,9 +3,10 @@
 ROS node for controlling the motors
 This code provides the hardware-level control of the wheels for the PADAWAN robot.
 
-input: cmd_vel [geometry_msgs/Twist]
-output: motor drive
-
+- input: command of body velocities (linear.x and angular.z)
+-- topic: /cmd_vel [geometry_msgs/Twist]
+- output: motor drive
+--
 Since the motors do not have any way of measuring rotation, we used fixed PWM based on the signal of the control input.
 
 '''
