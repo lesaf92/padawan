@@ -19,7 +19,8 @@ Some useful details for understanding the robot.
 
 ### ROS nodes
 - raspicam_node
-- robotupstart
+- robot_upstart
+- motor_driver
 
 ![L298N board schematic](https://newscrewdriver.files.wordpress.com/2021/01/l298n-module-schematic-16x9-1.jpg?w=772)
 
