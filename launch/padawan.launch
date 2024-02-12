@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="padawan">
+        <node name="motor_driver" pkg="padawan" type="motor_driver.py" output="screen"/>
+        <include file="$(find raspicam_node)/launch/camerav2_410x308_30fps.launch" />
+    </group>
+</launch>
