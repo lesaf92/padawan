@@ -23,6 +23,9 @@ Some useful details for understanding the robot.
 - motor_driver
 
 ![L298N board schematic](https://newscrewdriver.files.wordpress.com/2021/01/l298n-module-schematic-16x9-1.jpg?w=772)
+L298N board schematic
+![Raspberry Pi 3B pinout usage](/assets/padawan_pinout.png)
+Raspberry Pi pin usage
 
 ### TODO list
 - [X] drive motors
