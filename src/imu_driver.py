@@ -2,7 +2,7 @@
 import rospy
 from std_msgs.msg import Float64MultiArray
 
-import sys
+import numpy as np
 import time
 import smbus
 
