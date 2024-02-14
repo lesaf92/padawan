@@ -18,7 +18,7 @@ The robot structure aims to be simple as possible. Using ROS and basic hardware,
 Some useful details for understanding the robot.
 
 ### Libraries or packages installed
- - imusensor (using the setup.py script instead of "pip install")
+ - [imusensor](https://github.com/niru-5/imusensor) (using the setup.py script instead of "pip install")
 
 ### ROS nodes
 - raspicam_node
@@ -29,6 +29,15 @@ Some useful details for understanding the robot.
 
 ![Raspberry Pi 3B pinout usage](/assets/padawan_pinout.png)
 
+For quick reference when creating executable python scripts:
+```
+git update-index --chmod=+x file.sh
+chmod +x file.sh
+
+git add .
+git commit -m 'commit message'
+git push origin main
+```
 
 ### TODO list
 - [X] drive motors
