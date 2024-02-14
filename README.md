@@ -9,7 +9,7 @@ The robot structure aims to be simple as possible. Using ROS and basic hardware,
  - 2x DC motors
  - L298N motor driver board
  - Picam V2.1
- - MPU6050 IMU
+ - MPU9250 9-axis IMU
  - 12 V battery
 ## Software
  - Ubuntu 20.04
@@ -22,8 +22,8 @@ Some useful details for understanding the robot.
 
 ### ROS nodes
 - raspicam_node
-- robot_upstart
 - motor_driver
+- imu_driver
 
 ![L298N board schematic](https://newscrewdriver.files.wordpress.com/2021/01/l298n-module-schematic-16x9-1.jpg?w=772)
 
@@ -33,13 +33,14 @@ Some useful details for understanding the robot.
 ### TODO list
 - [X] drive motors
 - [X] read camera in decent fps
-- [ ] read IMU in decent Hz
+- [X] read IMU in decent Hz
 - [X] create a node for the motors
 - [X] create a node for the camera
-- [ ] create a node for the IMU
+- [X] create a node for the IMU
 - [ ] bringup at boot
 - [ ] (basic) process camera image and republish
 - [ ] navigate based on the image processed
 - [ ] estimate using IMU only
 - [ ] navigate based on IMU estimation and processed image
 - [ ] (not so basic) process camera image
+- [ ] create a node for calibrating IMU or perform calibration at start
