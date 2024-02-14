@@ -31,7 +31,7 @@ def main():
     while not rospy.is_shutdown():
         imu.readSensor()
         imu.computeOrientation()
-        full_info = Float64MultiArray(data=float([imu.AccelVals, imu.GyroVals, imu.MagVals, imu.roll, imu.pitch, imu.yaw]))
+        full_info = Float64MultiArray(data=float(imu.AccelVals + imu.GyroVals + imu.MagVals +[ imu.roll, imu.pitch, imu.yaw]))
         imu_pub.publish(full_info)
         rate.sleep()
         
