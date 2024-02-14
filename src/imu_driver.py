@@ -25,6 +25,9 @@ def main():
     rospy.init_node('imu_driver', anonymous=False)
     rate = rospy.Rate(100)
     imu_pub = rospy.Publisher('imu_data', Float64MultiArray, queue_size=10)
+    # Initializing the imu class using i2c at address 0x68
+    imu = MPU9250.MPU9250(smbus.SMBus(1), 0x68)
+    imu.begin()
     while not rospy.is_shutdown():
         imu.readSensor()
         imu.computeOrientation()
