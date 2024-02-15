@@ -53,3 +53,4 @@ git push origin main
 - [ ] navigate based on IMU estimation and processed image
 - [ ] (not so basic) process camera image
 - [ ] create a node for calibrating IMU or perform calibration at start
+- [ ] create rviz models and tfs
