@@ -21,9 +21,9 @@ The robot structure aims to be simple as possible. Using ROS and basic hardware,
     - [imusensor](https://github.com/niru-5/imusensor) (using the setup.py script instead of "pip install")
 
 - ROS nodes
-    - raspicam_node
-    - motor_driver
-    - imu_driver
+    - [raspicam_node](https://github.com/UbiquityRobotics/raspicam_node)
+    - motor_driver (custom pkg)
+    - imu_driver (custom pkg)
 
 ![L298N board schematic](https://newscrewdriver.files.wordpress.com/2021/01/l298n-module-schematic-16x9-1.jpg?w=772)
 
@@ -54,5 +54,5 @@ git push origin main
 - [ ] estimate using IMU only
 - [ ] navigate based on IMU estimation and processed image
 - [ ] (not so basic) process camera image
-- [ ] create a node for calibrating IMU or perform calibration at start
+- [X] create a node for calibrating IMU or perform calibration at start
 - [ ] create rviz models and tfs
