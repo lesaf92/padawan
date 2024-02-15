@@ -15,19 +15,21 @@ The robot structure aims to be simple as possible. Using ROS and basic hardware,
  - Ubuntu 20.04
  - ROS Noetic
 
-Some useful details for understanding the robot.
+### Some useful details for understanding the robot.
 
-### Libraries or packages installed
- - [imusensor](https://github.com/niru-5/imusensor) (using the setup.py script instead of "pip install")
+- Libraries or packages installed
+    - [imusensor](https://github.com/niru-5/imusensor) (using the setup.py script instead of "pip install")
 
-### ROS nodes
-- raspicam_node
-- motor_driver
-- imu_driver
+- ROS nodes
+    - raspicam_node
+    - motor_driver
+    - imu_driver
 
 ![L298N board schematic](https://newscrewdriver.files.wordpress.com/2021/01/l298n-module-schematic-16x9-1.jpg?w=772)
 
 ![Raspberry Pi 3B pinout usage](/assets/padawan_pinout.png)
+
+![IMU axis and mount position](/assets/imu_mounted_v1.png)
 
 For quick reference when creating executable python scripts:
 ```
