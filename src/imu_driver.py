@@ -4,20 +4,14 @@ from std_msgs.msg import Float64MultiArray
 
 import numpy as np
 import time
+import os
 import smbus
 
 from imusensor.MPU9250 import MPU9250
 '''
-print('Calibrating gyro...')
-imu.caliberateGyro()
-print('Done.')
-print('Calibrating acc...')
-imu.caliberateAccelerometer()
-print('Done.')
+IMU driver node. Publishes data in a 12 position array [accXYZ, gyrXYZ, magXYZ, RPY] (temporarily)
+Loads a previously saved calibration file to begin publishing.
 '''
-
-# or load your own caliberation file
-#imu.loadCalibDataFromFile("/home/pi/calib_real_bolder.json")
 ###############################################################################
 ############################# Main starts here ################################
 ###############################################################################
@@ -28,6 +22,9 @@ def main():
     # Initializing the imu class using i2c at address 0x68
     imu = MPU9250.MPU9250(smbus.SMBus(1), 0x68)
     imu.begin()
+    filepath = os.path.dirname(os.path.abspath(__file__)) + '/imu_calibration_data.json'
+    imu.loadCalibDataFromFile(filepath)
+    print('Loaded imu calibration file!')
     while not rospy.is_shutdown():
         imu.readSensor()
         imu.computeOrientation()
