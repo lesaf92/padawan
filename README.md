@@ -1,6 +1,6 @@
 # PADAWAN: Pixel Aware Differential-drive Autonomous robot With Artificial Neural networks
 
-Raspberry Pi code for the PADAWAN robot
+Code for the PADAWAN robot
 
 The robot structure aims to be simple as possible. Using ROS and basic hardware, one should be able to power up the robot and start testing and probing. The objective is to collect data easy and quick to test computer vision algorithms. Some things the Pi3B will not be able to handle, naturally a more powerfull computer in the same network can process and send the results via ROS
 
